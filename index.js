@@ -1,5 +1,5 @@
 require('dotenv').config();
-const TelegramBot= require('node-telegram-bot-api')
+const TelegramBot = require('node-telegram-bot-api');
 
 const {
     findGenres,
