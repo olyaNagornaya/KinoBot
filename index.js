@@ -197,7 +197,6 @@ bot.on('callback_query', async (query) => {
                     },
                 });
             }
-            topfilms;
         });
     }
 
