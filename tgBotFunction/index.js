@@ -4,7 +4,7 @@ const key = process.env.API_KEY
 
 async function findGenres() {
     const response = await axios(
-        `https://kinopoiskapiunofficial.tech/api/v2.1/films/filters`,
+        `https://kinopoiskapiunofficial.tech/api/v2.2/films/filters`,
         {
             headers: {
                 'X-API-KEY': key,
@@ -30,14 +30,18 @@ async function findLists(list, pageNum) {
     return response.data.films;
 }
 
+
 async function findByGenres(
     genreId,
-    yearStart = 1888,
-    yearEnd = 2021,
+    yearStart,
+    yearEnd,
     pageNum
+
+
 ) {
     const response = await axios(
         `https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-filters?genre=${genreId}&order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=${yearStart}&yearTo=${yearEnd}&page=${pageNum}`,
+
         {
             headers: {
                 'X-API-KEY': key,
@@ -45,6 +49,7 @@ async function findByGenres(
         }
     );
     return response.data.films;
+
 }
 
 async function findById(id) {

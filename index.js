@@ -1,13 +1,14 @@
+process.env.NTBA_FIX_319 = 1;
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
 
+const token = process.env.BOT_TOKEN
 const {
     findGenres,
     findLists,
     findByGenres,
     findRandom
-} = require('./tgBotFunction/index.js');
-const token = process.env.BOT_TOKEN
+} = require('./tgBotFunction/index');
 
 const bot = new TelegramBot(token, {polling: true});
 
